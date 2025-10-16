@@ -1,15 +1,17 @@
-package com.apiProductos.cursoTDC.Model;
+package com.apiProductos.cursoTDC.model;
 
-import jakarta.persistence.ConstructorResult;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
 
 @Getter
 @Setter
 @AllArgsConstructor
-@Entity
+//@Entity
+@NoArgsConstructor
 public class Cliente {
 
     private Long id_cliente;
@@ -17,6 +19,4 @@ public class Cliente {
     private String apellido;
     private String dni;
 
-    public Cliente() {
-    }
 }
