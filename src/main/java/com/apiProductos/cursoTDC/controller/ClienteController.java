@@ -1,7 +1,7 @@
-package com.apiProductos.cursoTDC.Controller;
+package com.apiProductos.cursoTDC.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController("/cliente")
 public class ClienteController {
 }

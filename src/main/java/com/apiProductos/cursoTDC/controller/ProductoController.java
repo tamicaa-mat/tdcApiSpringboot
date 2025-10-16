@@ -1,13 +1,13 @@
-package com.apiProductos.cursoTDC.Controller;
+package com.apiProductos.cursoTDC.controller;
 
-import com.apiProductos.cursoTDC.Service.IProductoService;
+import com.apiProductos.cursoTDC.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController("/producto")
 public class ProductoController {
 
     @Autowired
-    IProductoService productoService;
+    ProductoService productoService;
 
 }
