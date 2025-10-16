@@ -1,4 +1,4 @@
-package com.apiProductos.cursoTDC.Model;
+package com.apiProductos.cursoTDC.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
