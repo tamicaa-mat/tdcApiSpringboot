@@ -18,6 +18,6 @@ public class Producto {
     private String nombre;
     private String marca;
     private Double costo;
-    private Double cantidad;
+    private int cantidad;
 
 }
