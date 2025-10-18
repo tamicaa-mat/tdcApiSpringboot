@@ -21,5 +21,30 @@ public class ProductoService implements IProductoService{
         return listaProductos;
     }
 
+    @Override
+    public void saveProducto(Producto p) {
+        productoRepo.save(p);
+
+    }
+
+    @Override
+    public void deleteProducto(Long codigo_p) {
+        productoRepo.deleteById(codigo_p);
+    }
+
+    @Override
+    public Producto findProducto(Long codigo_p) {
+        Producto prod;
+        prod=productoRepo.findById(codigo_p).orElse(null);
+        return prod;
+
+    }
+
+    @Override
+    public void editProducto(Long idOriginal, Long idNueva, String nombreNuevo, String descripcionNueva, double precioNuevo) {
+        // vemos despues
+
+    }
+
 
 }
