@@ -52,3 +52,5 @@ build/
 *.zip
 *.tar.gz
 *.rar
+data.sql.trace.db
+data.sql.mv.db
