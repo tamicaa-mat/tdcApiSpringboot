@@ -12,39 +12,30 @@ public class ProductoService implements IProductoService{
 
     //inyeccion de dependencia el repositorio
     @Autowired
-    private IProductoRepository productoRepo ;
+    private IProductoRepository productoRepository;
 
     @Override
     public List<Producto> getProductos() {
-        List<Producto> listaProductos = productoRepo.findAll();
-
-        return listaProductos;
+        return  productoRepository.findAll();
     }
 
     @Override
     public void saveProducto(Producto p) {
-        productoRepo.save(p);
-
+        productoRepository.save(p);
     }
 
     @Override
     public void deleteProducto(Long codigo_p) {
-        productoRepo.deleteById(codigo_p);
+        productoRepository.deleteById(codigo_p);
     }
 
     @Override
     public Producto findProducto(Long codigo_p) {
-        Producto prod;
-        prod=productoRepo.findById(codigo_p).orElse(null);
-        return prod;
-
+        return productoRepository.findById(codigo_p).orElse(null);
     }
 
     @Override
     public void editProducto(Long idOriginal, Long idNueva, String nombreNuevo, String descripcionNueva, double precioNuevo) {
         // vemos despues
-
     }
-
-
 }
