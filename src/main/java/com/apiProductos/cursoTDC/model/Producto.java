@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 //mapeamos la clase producto para que se genere en la bd
 // los nombres de las tablas minuscula y singular
@@ -14,15 +15,19 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "producto")
+@ToString
 public class Producto {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo_prodcuto;
+    @Column(name = "nombre")
     private String nombre;
+    @Column(name = "marca")
     private String marca;
+    @Column(name = "costo")
     private Double costo;
+    @Column(name = "cantidad")
     private int cantidad;
 
 }
