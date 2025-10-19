@@ -19,17 +19,16 @@ public class ProductoController {
         return productoService.getProductos();
     }
 
-
     @PostMapping("/productos/crear")
     public String  crearProducto(Producto p){
         productoService.saveProducto(p);
-        return "el producto se creo con exito";
-        }
+        return "Producto creado con exito";
+    }
 
     @DeleteMapping("/productos/eliminar/{codigo_producto}")
     public String deleteProducto(@PathVariable Long codigo_producto){
         productoService.deleteProducto(codigo_producto);
-        return  "producto eliminado";
+        return "Producto eliminado";
     }
 
 
