@@ -14,20 +14,24 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
 @Entity
 @ToString
 public class Producto {
 
+    // no hace falta agregar la notacion @column en cada propiedad, a menos que quieras configurar algo en particular para cada columna,
+    // como no configuraste nada solo le asignaste name, borre las anotaciones @column
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo_prodcuto;
-    @Column(name = "nombre")
     private String nombre;
-    @Column(name = "marca")
     private String marca;
-    @Column(name = "costo")
     private Double costo;
-    @Column(name = "cantidad")
     private int cantidad;
+    @ManyToOne
+    @JoinColumn(name = "codigo_venta") // FK en la tabla producto
+    private Venta orden;
+
+
 
 }
