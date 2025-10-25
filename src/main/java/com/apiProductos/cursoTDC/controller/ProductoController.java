@@ -39,7 +39,8 @@ public class ProductoController {
     //ResponseEntity
     @DeleteMapping("/productos/eliminar/{codigo_producto}")
     public ResponseEntity<?> deleteProducto(@PathVariable Long codigo_producto){
-       return  ResponseEntity.ok(productoService.deleteProducto(codigo_producto));
+        productoService.deleteProducto(codigo_producto);
+        return ResponseEntity.ok("Producto eliminado correctamente");
 
     }
 

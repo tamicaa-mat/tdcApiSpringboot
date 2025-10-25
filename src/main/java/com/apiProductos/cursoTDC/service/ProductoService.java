@@ -25,8 +25,8 @@ public class ProductoService implements IProductoService{
     }
 
     @Override
-    public Producto deleteProducto(Long codigo_p) {
-        productoRepository.deleteById(codigo_p);
+    public void deleteProducto(Long codigo_p) {
+       productoRepository.deleteById(codigo_p);
     }
 
     @Override

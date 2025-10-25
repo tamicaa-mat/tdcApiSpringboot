@@ -10,7 +10,7 @@ public interface IProductoService {
 
     Producto saveProducto(Producto p);
 
-    Producto deleteProducto(Long codigoProducto);
+    void deleteProducto(Long codigoProducto);
 
 
      Producto findProducto(Long id);
