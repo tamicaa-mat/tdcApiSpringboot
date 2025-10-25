@@ -1,5 +1,11 @@
 package com.apiProductos.cursoTDC.model;
-import jakarta.persistence.*;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,15 +29,13 @@ public class Producto {
     // como no configuraste nada solo le asignaste name, borre las anotaciones @column
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long codigo_prodcuto;
+    private Long codigo_producto;
     private String nombre;
     private String marca;
     private Double costo;
-    private int cantidad;
+    private Integer cantidad;
     @ManyToOne
     @JoinColumn(name = "codigo_venta") // FK en la tabla producto
     private Venta orden;
-
-
 
 }

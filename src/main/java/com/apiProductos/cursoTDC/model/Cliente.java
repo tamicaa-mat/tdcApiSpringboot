@@ -1,26 +1,21 @@
 package com.apiProductos.cursoTDC.model;
 
-import jakarta.persistence.*;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
+import lombok.ToString;
 
-
-@Getter
-@Setter
-@AllArgsConstructor
+@Data
 @Entity
-@NoArgsConstructor
-@Table(name = "cliente")
+@Table
+@ToString
 public class Cliente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id_cliente;
     private String nombre;
     private String apellido;
