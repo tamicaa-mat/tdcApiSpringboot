@@ -20,12 +20,12 @@ public class ProductoService implements IProductoService{
     }
 
     @Override
-    public void saveProducto(Producto p) {
-        productoRepository.save(p);
+    public Producto saveProducto(Producto p) {
+       return productoRepository.save(p);
     }
 
     @Override
-    public void deleteProducto(Long codigo_p) {
+    public Producto deleteProducto(Long codigo_p) {
         productoRepository.deleteById(codigo_p);
     }
 

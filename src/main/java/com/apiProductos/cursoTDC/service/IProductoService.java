@@ -8,9 +8,9 @@ public interface IProductoService {
 
     List<Producto> getProductos();
 
-    void saveProducto(Producto p);
+    Producto saveProducto(Producto p);
 
-    void deleteProducto(Long codigoProducto);
+    Producto deleteProducto(Long codigoProducto);
 
 
      Producto findProducto(Long id);
