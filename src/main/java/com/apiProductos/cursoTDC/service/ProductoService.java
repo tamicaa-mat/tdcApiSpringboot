@@ -19,10 +19,13 @@ public class ProductoService implements IProductoService{
         return  productoRepository.findAll();
     }
 
+
     @Override
-    public Producto saveProducto(Producto p) {
-       return productoRepository.save(p);
+    public List<Producto> saveProductos(List<Producto> productoList) {
+        return productoRepository.saveAll(productoList);
     }
+
+
 
     @Override
     public void deleteProducto(Long codigo_p) {

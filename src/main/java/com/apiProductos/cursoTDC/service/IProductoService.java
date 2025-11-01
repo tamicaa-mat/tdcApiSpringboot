@@ -8,12 +8,12 @@ public interface IProductoService {
 
     List<Producto> getProductos();
 
-    Producto saveProducto(Producto p);
+   List <Producto> saveProductos(List <Producto> productoList);
 
-    void deleteProducto(Long codigoProducto);
+   void deleteProducto(Long codigoProducto);
 
 
-     Producto findProducto(Long id);
+   Producto findProducto(Long id);
 
     //falta el metodo modificacion de producto
     void editProducto(Long idOriginal, Long idNueva, String nombreNuevo, String descripcionNueva, double precioNuevo);
@@ -24,3 +24,4 @@ public interface IProductoService {
 
 
 }
+
