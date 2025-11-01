@@ -13,7 +13,7 @@ import java.util.List;
 // PERO EN LOS CONTROLADORES SIEMPRE RESPONSEENTITY para manejar codigos de estado y http,
 
 @RestController
-@RequestMapping("/producto")
+@RequestMapping("/productos")
 public class ProductoController {
 
 
@@ -22,22 +22,22 @@ public class ProductoController {
     ProductoService productoService;
 
     //ResponseEntity
-    @GetMapping("/productos")
+    @GetMapping()
     public ResponseEntity<?> getProductos(){
         return ResponseEntity.ok(productoService.getProductos());
 
     }
 
     //ResponseEntity
-    @PostMapping("/productos/crear")
-    public ResponseEntity<?> crearProducto(Producto p){
+    @PostMapping("/crear")
+    public ResponseEntity<?> crearProducto(@RequestBody Producto p){
         return ResponseEntity.ok(productoService.saveProducto(p));
 
     }
 
 
     //ResponseEntity
-    @DeleteMapping("/productos/eliminar/{codigo_producto}")
+    @DeleteMapping("/eliminar/{codigo_producto}")
     public ResponseEntity<?> deleteProducto(@PathVariable Long codigo_producto){
         productoService.deleteProducto(codigo_producto);
         return ResponseEntity.ok("Producto eliminado correctamente");

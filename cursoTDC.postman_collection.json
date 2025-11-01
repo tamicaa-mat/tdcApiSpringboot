@@ -32,7 +32,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"codigo_producto\": 1,\r\n    \"cantidad\": 10,\r\n    \"costo\": 100.5,\r\n    \"nombre\": \"Gonzalo\",\r\n    \"marca\": \"pepe\",\r\n    \"codigo_venta\": 1\r\n}\r\n",
+					"raw": "{\r\n    \"cantidad\": 10,\r\n    \"costo\": 100.5,\r\n    \"nombre\": \"Gonzalo\",\r\n    \"marca\": \"pepe\",\r\n    \"codigo_venta\": \r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "text"
