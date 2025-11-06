@@ -31,11 +31,10 @@ public class ProductoController {
     //ResponseEntity aca en lugar de crear un producto a la vez, mejor creamos un lista de prodctos
 
     @PostMapping("/crear")
-    public ResponseEntity<List<Producto>> saveProductos(@RequestBody List<Producto> productos) {
-        List<Producto> guardados = productoService.saveProductos(productos);
-        return ResponseEntity.ok(guardados);
+    public ResponseEntity<Producto> saveProducto(@RequestBody Producto producto) {
+        Producto guardado = productoService.saveProducto(producto);
+        return ResponseEntity.ok(guardado);
     }
-
 
 
 

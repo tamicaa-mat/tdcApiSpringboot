@@ -26,13 +26,13 @@
 			"response": []
 		},
 		{
-			"name": "crear productos",
+			"name": "crear producto",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{{\n        \"cantidad\": 10,\n        \"costo\": 100.5,\n        \"nombre\": \"Gonzalo\",\n        \"marca\": \"Pepe\",\n        \"codigo_venta\": \"\"\n    },\n    {\n        \"cantidad\": 5,\n        \"costo\": 80.0,\n        \"nombre\": \"Camisa Azul\",\n        \"marca\": \"Rey\",\n        \"codigo_venta\": \"\n    },\n    {\n        \"cantidad\": 3,\n        \"costo\": 150.75,\n        \"nombre\": \"Pantalón Beige\",\n        \"marca\": \"Roma\",\n        \"codigo_venta\": \"\n    }}",
+					"raw": "{\n        \"cantidad\": 100,\n        \"costo\": 200.5,\n        \"nombre\": \"Gonzalo SOLA\",\n        \"marca\": \"SR\",\n        \"codigo_venta\": \"\"\n    }",
 					"options": {
 						"raw": {
 							"language": "JSON"

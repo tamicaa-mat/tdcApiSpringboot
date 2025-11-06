@@ -21,8 +21,9 @@ public class ProductoService implements IProductoService{
 
 
     @Override
-    public List<Producto> saveProductos(List<Producto> productoList) {
-        return productoRepository.saveAll(productoList);
+    public Producto saveProducto(Producto producto) {
+        Producto productoNuevo = productoRepository.save(producto);
+        return productoNuevo;
     }
 
 
