@@ -34,10 +34,10 @@ public class Producto {
     private String marca;
     private Double costo;
     private Integer cantidad;
+
     @ManyToOne
     @JoinColumn(name = "codigo_venta", nullable = true) // FK en la tabla producto agrego nullable true porque si quiero crear un producto
     // que aun no vendi entonces ese campo debe poder ser null sino tira error en postman
-
     private Venta orden;
 
 }

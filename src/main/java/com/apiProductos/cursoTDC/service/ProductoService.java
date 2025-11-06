@@ -1,6 +1,8 @@
 package com.apiProductos.cursoTDC.service;
 
+import com.apiProductos.cursoTDC.dto.ProductoDto;
 import com.apiProductos.cursoTDC.model.Producto;
+import com.apiProductos.cursoTDC.model.Venta;
 import com.apiProductos.cursoTDC.repository.IProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,9 +23,15 @@ public class ProductoService implements IProductoService{
 
 
     @Override
-    public Producto saveProducto(Producto producto) {
-        Producto productoNuevo = productoRepository.save(producto);
-        return productoNuevo;
+    public Producto saveProducto(ProductoDto dto) {
+        Producto producto = new Producto();
+        producto.setNombre(dto.getNombre());
+        producto.setMarca(dto.getMarca());
+        producto.setCosto(dto.getCosto());
+        producto.setCantidad(dto.getCantidad());
+
+        return productoRepository.save(producto);
+
     }
 
 

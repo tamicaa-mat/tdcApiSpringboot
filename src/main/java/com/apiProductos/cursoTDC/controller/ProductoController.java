@@ -1,5 +1,6 @@
 package com.apiProductos.cursoTDC.controller;
 
+import com.apiProductos.cursoTDC.dto.ProductoDto;
 import com.apiProductos.cursoTDC.model.Producto;
 import com.apiProductos.cursoTDC.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,14 +32,10 @@ public class ProductoController {
     //ResponseEntity aca en lugar de crear un producto a la vez, mejor creamos un lista de prodctos
 
     @PostMapping("/crear")
-    public ResponseEntity<Producto> saveProducto(@RequestBody Producto producto) {
-        Producto guardado = productoService.saveProducto(producto);
+    public ResponseEntity<Producto> saveProducto(@RequestBody ProductoDto dto) {
+        Producto guardado = productoService.saveProducto(dto);
         return ResponseEntity.ok(guardado);
     }
-
-
-
-
 
 
     //ResponseEntity

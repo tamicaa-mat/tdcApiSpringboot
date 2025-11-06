@@ -1,12 +1,10 @@
 package com.apiProductos.cursoTDC.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -20,5 +18,9 @@ public class Cliente {
     private String nombre;
     private String apellido;
     private String dni;
+
+ // el cliente tiene una lista con tdas sus compras
+    @OneToMany(mappedBy = "cliente")
+    private List<Venta> ventas;
 
 }

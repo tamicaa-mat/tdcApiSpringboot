@@ -24,5 +24,9 @@ public class Venta {
     private Double total;
     @OneToMany(mappedBy = "orden")
     private List<Producto> listaProductos;
+    // muchas ventas pueden pertenecer al mismo cliente aca tenemos para cada venta un cliente asociado
+    @ManyToOne
+    @JoinColumn(name = "id_cliente", nullable = false)
+    private Cliente cliente;
 
 }
