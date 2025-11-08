@@ -17,11 +17,6 @@ public class ProductoService implements IProductoService{
     @Autowired
     private IProductoRepository productoRepository;
 
-//    @Override
-//    public List<Producto> getProductos() {
-//        return  productoRepository.findAll();
-//    }
-
     @Override
     public List<ProductoDto> getProductos() {
         List<Producto> productos = productoRepository.findAll();
@@ -68,7 +63,6 @@ public class ProductoService implements IProductoService{
     ///  agrego funcion para convertir a DTO
     private ProductoDto convertirADto(Producto producto) {
         ProductoDto dto = new ProductoDto();
-        dto.setCodigo_producto(producto.getCodigo_producto());
         dto.setNombre(producto.getNombre());
         dto.setMarca(producto.getMarca());
         dto.setCosto(producto.getCosto());

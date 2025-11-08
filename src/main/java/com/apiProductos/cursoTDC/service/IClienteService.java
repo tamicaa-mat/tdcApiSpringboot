@@ -1,24 +1,20 @@
 package com.apiProductos.cursoTDC.service;
 
+import com.apiProductos.cursoTDC.dto.ClienteDto;
 import com.apiProductos.cursoTDC.model.Cliente;
 
 import java.util.List;
 
 public interface IClienteService {
 
-    List<Cliente> getClientes();
-
-    void saveCliente(Cliente c);
-
-    void deleteCliente(Long codigoCliente);
 
 
-    Cliente findById(Long id);
+  //  Cliente findById(Long id);
 
-    //falta el metodo modificacion de producto
-    void editCliente(Long idOriginal, Long idNueva, String nombre, String apellido, String dni);
+    List<ClienteDto> getClientes();
 
+    Cliente saveCliente(ClienteDto dto);
 
-
+    void deleteCliente(Long id);
 
 }

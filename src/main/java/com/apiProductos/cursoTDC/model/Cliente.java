@@ -14,11 +14,13 @@ public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id_cliente;
+    private Long codigo_cliente;
     private String nombre;
     private String apellido;
     private String dni;
-
+    private String email;
+    private String telefono;
+    private String direccion;
  // el cliente tiene una lista con tdas sus compras
     @OneToMany(mappedBy = "cliente")
     private List<Venta> ventas;
