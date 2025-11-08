@@ -12,7 +12,7 @@ import java.util.List;
 //agrego @RequestMapping en todos los controladores
 //en el controlador SIEMPRE ES RESPONSEENTITY , NUESTRO SECRVICIO ESTA BIEN ya que esa capa maneja datos internos, no endpoints,
 // PERO EN LOS CONTROLADORES SIEMPRE RESPONSEENTITY para manejar codigos de estado y http,
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/productos")
 public class ProductoController {
