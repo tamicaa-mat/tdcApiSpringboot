@@ -7,6 +7,7 @@ import com.apiProductos.cursoTDC.repository.IProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -16,11 +17,22 @@ public class ProductoService implements IProductoService{
     @Autowired
     private IProductoRepository productoRepository;
 
-    @Override
-    public List<Producto> getProductos() {
-        return  productoRepository.findAll();
-    }
+//    @Override
+//    public List<Producto> getProductos() {
+//        return  productoRepository.findAll();
+//    }
 
+    @Override
+    public List<ProductoDto> getProductos() {
+        List<Producto> productos = productoRepository.findAll();
+        List<ProductoDto> productosDto = new ArrayList<>();
+
+        // agarro los productos que vienen de la BD las convierto a dto antes de volver como respuesta
+        for (Producto producto : productos) {
+            productosDto.add(convertirADto(producto));
+        }
+        return productosDto;
+    }
 
     @Override
     public Producto saveProducto(ProductoDto dto) {
@@ -53,4 +65,14 @@ public class ProductoService implements IProductoService{
     }
 
 
+    ///  agrego funcion para convertir a DTO
+    private ProductoDto convertirADto(Producto producto) {
+        ProductoDto dto = new ProductoDto();
+        dto.setCodigo_producto(producto.getCodigo_producto());
+        dto.setNombre(producto.getNombre());
+        dto.setMarca(producto.getMarca());
+        dto.setCosto(producto.getCosto());
+        dto.setCantidad(producto.getCantidad());
+        return dto;
+    }
 }

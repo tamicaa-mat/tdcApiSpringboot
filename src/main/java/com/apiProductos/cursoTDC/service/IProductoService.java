@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface IProductoService {
 
-    List<Producto> getProductos();
+    List<ProductoDto> getProductos();
 
    Producto saveProducto(ProductoDto dto);
 
