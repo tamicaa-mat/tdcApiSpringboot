@@ -1,5 +1,6 @@
 package com.apiProductos.cursoTDC.service;
 
+import com.apiProductos.cursoTDC.dto.VentaDto;
 import com.apiProductos.cursoTDC.model.Cliente;
 import com.apiProductos.cursoTDC.model.Producto;
 import com.apiProductos.cursoTDC.model.Venta;
@@ -14,17 +15,14 @@ import java.util.List;
 @Service
 public interface IVentaService {
 
-    List<Venta> getVentas();
+    List<VentaDto> getVentas();
 
-    void saveVenta(Venta v);
+     Venta saveVenta(VentaDto v);
 
     void deleteVenta(Long codigoVenta);
 
 
     Venta findById(Long id);
-
-    //falta el metodo modificacion de producto
-    void editVenta(Long codigo, Long codigoNuevo, LocalDate fecha, Double total, List<Venta> ventas);
 
 
 }

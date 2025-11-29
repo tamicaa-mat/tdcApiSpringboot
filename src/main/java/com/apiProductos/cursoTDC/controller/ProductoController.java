@@ -29,7 +29,7 @@ public class ProductoController {
 
     }
 
-    //ResponseEntity aca en lugar de crear un producto a la vez, mejor creamos un lista de prodctos
+    //ResponseEntity
 
     @PostMapping("/crear")
     public ResponseEntity<Producto> saveProducto(@RequestBody ProductoDto dto) {
